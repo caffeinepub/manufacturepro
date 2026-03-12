@@ -1,0 +1,133 @@
+@font-face {
+  font-family: "Cabinet Grotesk";
+  src: url("/assets/fonts/CabinetGrotesk-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bricolage Grotesque";
+  src: url("/assets/fonts/BricolageGrotesque-Variable.woff2") format("woff2");
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Navy/Industrial Dark Theme */
+    --background: 0.97 0.005 250;
+    --foreground: 0.15 0.02 250;
+
+    --card: 1 0 0;
+    --card-foreground: 0.15 0.02 250;
+
+    --popover: 1 0 0;
+    --popover-foreground: 0.15 0.02 250;
+
+    /* Orange accent */
+    --primary: 0.65 0.18 45;
+    --primary-foreground: 1 0 0;
+
+    --secondary: 0.92 0.01 250;
+    --secondary-foreground: 0.2 0.02 250;
+
+    --muted: 0.93 0.01 250;
+    --muted-foreground: 0.45 0.02 250;
+
+    --accent: 0.65 0.18 45;
+    --accent-foreground: 1 0 0;
+
+    --destructive: 0.55 0.22 27;
+    --destructive-foreground: 1 0 0;
+
+    --border: 0.88 0.01 250;
+    --input: 0.88 0.01 250;
+    --ring: 0.65 0.18 45;
+
+    --radius: 0.25rem;
+
+    /* Dark navy for sections */
+    --navy: 0.16 0.04 250;
+    --navy-deep: 0.11 0.03 250;
+    --steel: 0.55 0.03 250;
+    --orange: 0.65 0.18 45;
+    --orange-bright: 0.72 0.2 50;
+
+    --chart-1: 0.65 0.18 45;
+    --chart-2: 0.55 0.12 220;
+    --chart-3: 0.45 0.05 250;
+    --chart-4: 0.75 0.15 130;
+    --chart-5: 0.6 0.18 0;
+
+    --sidebar: 0.16 0.04 250;
+    --sidebar-foreground: 0.9 0.01 250;
+    --sidebar-primary: 0.65 0.18 45;
+    --sidebar-primary-foreground: 1 0 0;
+    --sidebar-accent: 0.22 0.04 250;
+    --sidebar-accent-foreground: 0.9 0.01 250;
+    --sidebar-border: 0.25 0.03 250;
+    --sidebar-ring: 0.65 0.18 45;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+    font-feature-settings: "kern" 1, "liga" 1;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display;
+    font-feature-settings: "kern" 1;
+  }
+}
+
+@layer utilities {
+  .text-navy {
+    color: oklch(var(--navy));
+  }
+  .bg-navy {
+    background-color: oklch(var(--navy));
+  }
+  .bg-navy-deep {
+    background-color: oklch(var(--navy-deep));
+  }
+  .text-orange {
+    color: oklch(var(--orange));
+  }
+  .bg-orange {
+    background-color: oklch(var(--orange));
+  }
+  .border-orange {
+    border-color: oklch(var(--orange));
+  }
+  .text-steel {
+    color: oklch(var(--steel));
+  }
+
+  .section-pad {
+    @apply py-20 md:py-28;
+  }
+
+  .container-wide {
+    @apply max-w-7xl mx-auto px-6 md:px-10;
+  }
+}
